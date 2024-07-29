@@ -1,0 +1,15 @@
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\bin\Debug\net8.0\SectionA.exe
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\bin\Debug\net8.0\SectionA.deps.json
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\bin\Debug\net8.0\SectionA.runtimeconfig.json
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\bin\Debug\net8.0\SectionA.dll
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\bin\Debug\net8.0\SectionA.pdb
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\obj\Debug\net8.0\SectionA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\obj\Debug\net8.0\SectionA.AssemblyInfoInputs.cache
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\obj\Debug\net8.0\SectionA.AssemblyInfo.cs
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\obj\Debug\net8.0\SectionA.csproj.CoreCompileInputs.cache
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\obj\Debug\net8.0\SectionA.sourcelink.json
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\obj\Debug\net8.0\SectionA.dll
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\obj\Debug\net8.0\refint\SectionA.dll
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\obj\Debug\net8.0\SectionA.pdb
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\obj\Debug\net8.0\SectionA.genruntimeconfig.cache
+C:\Users\Ichiya Rei\Desktop\NYP Information Technology\IT2154 Advanced Programming (AP)\IT2154 Advanced Programming (AP) Assignment 2\ASN2_Student_Resource\SectionA\obj\Debug\net8.0\ref\SectionA.dll
