@@ -65,7 +65,7 @@ public class Program
             totalDiscount += product.DiscountPrice;
         }
 
-        Console.WriteLine($"\nTotal Discount: {totalDiscount}");
+        Console.WriteLine($"\nTotal Discount: ${Math.Round(totalDiscount, 2)}");
         Console.WriteLine($"Total Products: {products.Count}");
 
         updateDiscAmountToMasterlist(filePath, newFilePath, products);
