@@ -70,7 +70,7 @@ namespace SectionA
 
         public static void generateInfoForMarketing(List<Product> products)
         {
-            using (StreamWriter sw = new StreamWriter("../Marketing.txt"))
+            using (StreamWriter sw = new StreamWriter("Marketing.txt"))
             {
                 foreach (var product in products)
                 {
@@ -81,7 +81,7 @@ namespace SectionA
 
         public static void generateInfoForSales(List<Product> products)
         {
-            using (StreamWriter sw = new StreamWriter("../Sales.txt"))
+            using (StreamWriter sw = new StreamWriter("Sales.txt"))
             {
                 foreach (var product in products)
                 {
@@ -92,7 +92,7 @@ namespace SectionA
 
         public static void generateInfoForLogistics(List<Product> products)
         {
-            using (StreamWriter sw = new StreamWriter("../Logistics.txt"))
+            using (StreamWriter sw = new StreamWriter("Logistics.txt"))
             {
                 foreach (var product in products)
                 {

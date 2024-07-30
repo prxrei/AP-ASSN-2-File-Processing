@@ -41,7 +41,7 @@ public class Program
         {
             foreach (var product in products)
             {
-                writer.WriteLine($"{product.Barcode}|{product.Name}|{product.Description}|{product.ReleaseDate:dd/MM/yyyy}|{product.Feature}|${product.Price}|{product.Quantity}|{product.DiscountType}|{product.QuantitySold}|{product.Weight}|{product.PackagingMaterial}|{product.DiscountPrice}");
+                writer.WriteLine($"{product.Barcode}|{product.Name}|{product.Description}|{product.ReleaseDate:dd/MM/yyyy}|{product.Feature}|{product.Price}|{product.Quantity}|{product.DiscountType}|{product.QuantitySold}|{product.Weight}|{product.PackagingMaterial}|{product.DiscountPrice}");
             }
         }
     }
