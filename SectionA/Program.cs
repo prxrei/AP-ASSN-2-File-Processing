@@ -114,7 +114,7 @@ namespace SectionA
 
             generateInfo(products);
 
-            Console.WriteLine("Files have been generated.");
+            Console.WriteLine("\nFiles have been generated.");
         }
     }
 }
