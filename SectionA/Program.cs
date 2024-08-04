@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 
+//ChatGPT is used to improve exception handling for file generation.
+
 namespace SectionA
 {
     public class Program
