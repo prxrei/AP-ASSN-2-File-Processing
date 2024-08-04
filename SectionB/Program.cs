@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using SectionA;
 
+// Using Enum for Discount Types
 public enum DiscountType
 {
     A,
@@ -13,6 +14,7 @@ public enum DiscountType
 
 public class Program
 {
+    // Method to calculate discounts based on the discount type
     public static void calculateDiscount(List<Product> products)
     {
         foreach (var product in products)
@@ -37,13 +39,14 @@ public class Program
             }
             catch (ArgumentException)
             {
-                Console.WriteLine($"Invalid discount type for product {product.Name} ({product.Barcode}). Setting discount price to 0.");
+                Console.WriteLine($"Invalid discount type for product {product.Name} ({product.Barcode}). Setting discount price to original price.");
                 product.DiscountPrice = product.Price;
             }
         }
     }
 
-    public static void updateDiscAmountToMasterlist(string originalFilePath, string newFilePath, List<Product> products)
+    // Method to update the master list with discount amounts
+    public static void updateDiscAmountToMasterlist(string newFilePath, List<Product> products)
     {
         try
         {
@@ -55,22 +58,25 @@ public class Program
                 }
             }
         }
-        catch (IOException ex)
+        catch (IOException err)
         {
-            Console.WriteLine($"Error writing to {newFilePath} - {ex.Message}");
+            Console.WriteLine($"Error writing to {newFilePath} - {err.Message}");
         }
-        catch (Exception ex)
+        catch (Exception err)
         {
-            Console.WriteLine($"Unexpected error - {ex.Message}");
+            Console.WriteLine($"Unexpected error - {err.Message}");
         }
     }
 
+    // Main method to run the program
     public static async Task Main(string[] args)
     {
         string filePath = "../ProdMasterlist.txt";
         string newFilePath = "../ProdMasterlistB.txt";
+
         var products = SectionA.Program.readProdMasterList(filePath);
 
+        // Calculate discounts asynchronously using await
         await Task.Run(() => calculateDiscount(products));
 
         double totalDiscount = 0;
@@ -87,7 +93,7 @@ public class Program
 
         Console.WriteLine($"\nTotal discount price: ${Math.Round(totalDiscount, 2)} for {products.Count} products.");
 
-        updateDiscAmountToMasterlist(filePath, newFilePath, products);
+        updateDiscAmountToMasterlist(newFilePath, products);
 
         Console.WriteLine("\nGenerated ProdMasterlistB.txt in root directory.");
     }

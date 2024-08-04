@@ -8,6 +8,7 @@ namespace SectionA
 {
     public class Program
     {
+        // Method to read the product master list from a file
         public static List<Product> readProdMasterList(string filePath)
         {
             var productList = new List<Product>();
@@ -16,6 +17,7 @@ namespace SectionA
             {
                 var lines = File.ReadAllLines(filePath);
 
+                // Check for empty file or file with only the header
                 if (lines.Length <= 1)
                 {
                     Console.WriteLine("Error: The product master list file is empty or only contains the header.");
@@ -23,8 +25,10 @@ namespace SectionA
                 }
 
                 for (int i = 1; i < lines.Length; i++)
-                    {
+                {
                     var parts = lines[i].Split('|');
+
+                    // Check for invalid product entries
                     if (parts.Length < 11)
                     {
                         Console.WriteLine($"Error: Invalid product entry on line {i + 1}. Skipping this entry.");
@@ -50,28 +54,29 @@ namespace SectionA
 
                         productList.Add(product);
                     }
-                    catch (Exception error)
+                    catch (Exception err)
                     {
-                        Console.WriteLine($"Error processing product entry on line {i + 1}: {error.Message}");
+                        Console.WriteLine($"Error processing product entry on line {i + 1}: {err.Message}");
                     }
                 }
             }
-            catch (FileNotFoundException error)
+            catch (FileNotFoundException err)
             {
-                Console.WriteLine($"Error: File not found - {error.Message}");
+                Console.WriteLine($"Error: File not found - {err.Message}");
             }
-            catch (IOException error)
+            catch (IOException err)
             {
-                Console.WriteLine($"Error reading file - {error.Message}");
+                Console.WriteLine($"Error reading file - {err.Message}");
             }
-            catch (Exception error)
+            catch (Exception err)
             {
-                Console.WriteLine($"Unexpected error - {error.Message}");
+                Console.WriteLine($"Unexpected error - {err.Message}");
             }
 
             return productList;
         }
 
+        // Method to generate marketing info and write to a file
         public static void generateInfoForMarketing(List<Product> products)
         {
             try
@@ -84,16 +89,17 @@ namespace SectionA
                     }
                 }
             }
-            catch (IOException error)
+            catch (IOException err)
             {
-                Console.WriteLine($"Error writing to Marketing.txt - {error.Message}");
+                Console.WriteLine($"Error writing to Marketing.txt - {err.Message}");
             }
-            catch (Exception error)
+            catch (Exception err)
             {
-                Console.WriteLine($"Unexpected error - {error.Message}");
+                Console.WriteLine($"Unexpected error - {err.Message}");
             }
         }
 
+        // Method to generate sales info and write to a file
         public static void generateInfoForSales(List<Product> products)
         {
             try
@@ -106,16 +112,17 @@ namespace SectionA
                     }
                 }
             }
-            catch (IOException error)
+            catch (IOException err)
             {
-                Console.WriteLine($"Error writing to Sales.txt - {error.Message}");
+                Console.WriteLine($"Error writing to Sales.txt - {err.Message}");
             }
-            catch (Exception error)
+            catch (Exception err)
             {
-                Console.WriteLine($"Unexpected error - {error.Message}");
+                Console.WriteLine($"Unexpected error - {err.Message}");
             }
         }
 
+        // Method to generate logistics info and write to a file
         public static void generateInfoForLogistics(List<Product> products)
         {
             try
@@ -128,18 +135,20 @@ namespace SectionA
                     }
                 }
             }
-            catch (IOException error)
+            catch (IOException err)
             {
-                Console.WriteLine($"Error writing to Logistics.txt - {error.Message}");
+                Console.WriteLine($"Error writing to Logistics.txt - {err.Message}");
             }
-            catch (Exception error)
+            catch (Exception err)
             {
-                Console.WriteLine($"Unexpected error - {error.Message}");
+                Console.WriteLine($"Unexpected error - {err.Message}");
             }
         }
 
+        // Delegate to invoke all generateInfo methods at once
         public delegate void GenerateInfo(List<Product> products);
 
+        // Main method to run the program
         public static void Main(string[] args)
         {
             string filePath = "../ProdMasterlist.txt";
