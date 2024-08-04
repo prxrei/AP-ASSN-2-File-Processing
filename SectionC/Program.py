@@ -29,4 +29,4 @@ else:
     )
 
 # Print the total sales using a single map statement
-list(map(lambda total: print(f"\nTotal Sales After Discount and Sales Rise: ${total:.2f}"), [total_sales]))
+list(map(lambda total: print(f"\nTotal Sales for Products of Discount Types B & C after Discount and Sales Rise: ${total:.2f}"), [total_sales]))
