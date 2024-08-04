@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using SectionA; // Add this to reference the SectionA namespace
+using SectionA;
 
 public enum DiscountType
 {
@@ -17,32 +17,51 @@ public class Program
     {
         foreach (var product in products)
         {
-            switch (Enum.Parse<DiscountType>(product.DiscountType))
+            try
             {
-                case DiscountType.A:
-                    product.DiscountPrice = Math.Round(product.Price * (1 - 0.10), 2);
-                    break;
-                case DiscountType.B:
-                    product.DiscountPrice = Math.Round(product.Price * (1 - 0.06), 2);
-                    break;
-                case DiscountType.C:
-                    product.DiscountPrice = Math.Round(product.Price * (1 - 0.02), 2);
-                    break;
-                default:
-                    product.DiscountPrice = 0.0;
-                    break;
+                switch (Enum.Parse<DiscountType>(product.DiscountType))
+                {
+                    case DiscountType.A:
+                        product.DiscountPrice = Math.Round(product.Price * (1 - 0.10), 2);
+                        break;
+                    case DiscountType.B:
+                        product.DiscountPrice = Math.Round(product.Price * (1 - 0.06), 2);
+                        break;
+                    case DiscountType.C:
+                        product.DiscountPrice = Math.Round(product.Price * (1 - 0.02), 2);
+                        break;
+                    default:
+                        product.DiscountPrice = product.Price;
+                        break;
+                }
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine($"Invalid discount type for product {product.Name} ({product.Barcode}). Setting discount price to 0.");
+                product.DiscountPrice = product.Price;
             }
         }
     }
 
     public static void updateDiscAmountToMasterlist(string originalFilePath, string newFilePath, List<Product> products)
     {
-        using (StreamWriter writer = new StreamWriter(newFilePath))
+        try
         {
-            foreach (var product in products)
+            using (StreamWriter writer = new StreamWriter(newFilePath))
             {
-                writer.WriteLine($"{product.Barcode}|{product.Name}|{product.Description}|{product.ReleaseDate:dd/MM/yyyy}|{product.Feature}|{product.Price}|{product.Quantity}|{product.DiscountType}|{product.QuantitySold}|{product.Weight}|{product.PackagingMaterial}|{product.DiscountPrice}");
+                foreach (var product in products)
+                {
+                    writer.WriteLine($"{product.Barcode}|{product.Name}|{product.Description}|{product.ReleaseDate:dd/MM/yyyy}|{product.Feature}|{product.Price}|{product.Quantity}|{product.DiscountType}|{product.QuantitySold}|{product.Weight}|{product.PackagingMaterial}|{product.DiscountPrice}");
+                }
             }
+        }
+        catch (IOException ex)
+        {
+            Console.WriteLine($"Error writing to {newFilePath} - {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Unexpected error - {ex.Message}");
         }
     }
 
